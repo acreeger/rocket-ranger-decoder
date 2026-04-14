@@ -1,0 +1,228 @@
+/* ── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    min-height: 100vh;
+    background-color: #0a0e17;
+    background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(197,165,90,0.07) 0%, transparent 60%);
+    color: #c5a55a;
+    font-family: 'Cinzel', 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+}
+
+/* ── Frame ─────────────────────────────────────────────────── */
+.frame {
+    width: 100%;
+    max-width: 680px;
+    border: 2px solid #c5a55a;
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+.frame::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(197,165,90,0.3);
+    pointer-events: none;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    letter-spacing: 0.25em;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    line-height: 1.2;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: clamp(0.7rem, 2vw, 0.95rem);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(197,165,90,0.7);
+    margin-top: 0.25rem;
+}
+
+.ornament {
+    font-size: 0.6rem;
+    letter-spacing: 0.6em;
+    color: rgba(197,165,90,0.5);
+    margin: 0.4rem 0;
+}
+
+/* ── Wheel Section ─────────────────────────────────────────── */
+.wheel-section {
+    display: grid;
+    justify-items: center;
+}
+
+.wheel-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#wheel {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.instruction {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+    color: rgba(197,165,90,0.5);
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+/* ── SVG Styles ────────────────────────────────────────────── */
+.outer-country text,
+.inner-country text {
+    transition: fill 0.15s;
+}
+
+.inner-country {
+    cursor: pointer;
+}
+
+.inner-country:hover text {
+    fill: #7a1a10 !important;
+}
+
+.outer-country.selected text {
+    fill: #1a4a8a !important;
+    font-weight: bold;
+}
+
+.inner-country.selected text {
+    fill: #8b1a10 !important;
+    font-weight: bold;
+}
+
+/* ── Divider ───────────────────────────────────────────────── */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, #c5a55a 30%, #c5a55a 70%, transparent 100%);
+    margin: 1.5rem 0;
+    opacity: 0.5;
+}
+
+/* ── Lookup Section ────────────────────────────────────────── */
+.lookup-section {
+    text-align: center;
+}
+
+.lookup-section h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(197,165,90,0.6);
+    margin-bottom: 1rem;
+}
+
+.select-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.select-group {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.select-group label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(197,165,90,0.5);
+}
+
+.select-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #141820;
+    border: 1px solid rgba(197,165,90,0.4);
+    color: #c5a55a;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border-radius: 3px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c5a55a' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+}
+
+.select-group select:focus {
+    outline: none;
+    border-color: #c5a55a;
+    box-shadow: 0 0 0 1px rgba(197,165,90,0.3);
+}
+
+.lookup-result {
+    margin-top: 1rem;
+    display: grid;
+    justify-items: center;
+    gap: 0.25rem;
+}
+
+.lookup-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(197,165,90,0.5);
+}
+
+.lookup-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c5a55a;
+    text-shadow: 0 0 12px rgba(197,165,90,0.3);
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+footer p {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: rgba(197,165,90,0.35);
+}
+
+.ornament-sm {
+    font-size: 0.5rem;
+    color: rgba(197,165,90,0.3);
+    margin-bottom: 0.3rem;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .frame {
+        padding: 1.25rem 1rem;
+    }
+
+    .select-row {
+        grid-template-columns: 1fr;
+        max-width: 260px;
+    }
+}

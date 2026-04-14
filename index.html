@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Ranger — Secret Decoder Wheel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="frame">
+        <header>
+            <div class="ornament">✦ ✦ ✦</div>
+            <h1>ROCKET RANGER</h1>
+            <h2>Secret Decoder Wheel</h2>
+            <div class="ornament">✦ ✦ ✦</div>
+        </header>
+
+        <main>
+            <section class="wheel-section">
+                <div class="wheel-container" id="wheel-container">
+                    <svg id="wheel" viewBox="-500 -500 1000 1000" aria-label="Decoder wheel"></svg>
+                </div>
+                <p class="instruction">Drag outer wheel to select origin &middot; Click inner wheel for destination</p>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="lookup-section">
+                <h3>Quick Lookup</h3>
+                <div class="select-row">
+                    <div class="select-group">
+                        <label for="origin-select">Origin</label>
+                        <select id="origin-select"></select>
+                    </div>
+                    <div class="select-group">
+                        <label for="dest-select">Destination</label>
+                        <select id="dest-select"></select>
+                    </div>
+                </div>
+                <div class="lookup-result">
+                    <span class="lookup-label">Fuel Required</span>
+                    <span class="lookup-value" id="lookup-value">&mdash;</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="ornament-sm">&#9670;</div>
+            <p>CINEMAWARE &middot; MCMLXXXVIII</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
